@@ -171,7 +171,9 @@
                                 required
                                 minlength="2"
                             />
-                            <p class="form-error">Ít nhất 2 kí tự</p>
+                            <p class="form-error">
+                                Please enter at least 2 characters
+                            </p>
                         </div>
                         <div class="form-group">
                             <label for="last-name" class="form-label">
@@ -186,7 +188,9 @@
                                 required
                                 minlength="2"
                             />
-                            <p class="form-error">Ít nhất 2 kí tự</p>
+                            <p class="form-error">
+                                Please enter at least 2 characters
+                            </p>
                         </div>
                     </div>
                     <!-- Mail - Phone -->
@@ -203,7 +207,7 @@
                                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                                 required
                             />
-                            <p class="form-error">Email không hợp lệ</p>
+                            <p class="form-error">Invalid email</p>
                         </div>
                         <div class="form-group">
                             <label for="phone" class="form-label">Phone</label>
@@ -218,7 +222,7 @@
                                 maxlength="10"
                                 required
                             />
-                            <p class="form-error">Số điện thoại không hợp lệ</p>
+                            <p class="form-error">invalid phone number</p>
                         </div>
                     </div>
                     <!-- Job type -->
@@ -234,6 +238,7 @@
                                         name="type"
                                         id="web-design"
                                         value="web-design"
+                                        checked
                                         required
                                     />
                                     <label for="web-design">Web Design</label>
@@ -275,7 +280,7 @@
                                 </div>
                             </div>
 
-                            <p class="form-error">Vui lòng chọn trường này</p>
+                            <p class="form-error">Please select this field</p>
                         </div>
                     </div>
                     <!-- Message -->
