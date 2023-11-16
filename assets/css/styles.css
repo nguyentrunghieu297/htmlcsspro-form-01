@@ -1,10 +1,12 @@
 * {
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
 
 :root {
-    --primary-color: rgba(20, 60, 60, 1);
-    --secondary-color: rgba(226, 237, 223, 1);
+    --primary-color: #3b208d;
+    --secondary-color: #ed9a9e;
 }
 
 html {
@@ -12,7 +14,301 @@ html {
 }
 
 body {
+    background: #f9f9fb;
+}
+
+body,
+input,
+textarea,
+button {
     font-size: 1.6rem;
-    font-family: "Poppins", sans-serif;
-    /* font-family: "Public Sans", sans-serif; */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+}
+
+main {
+    margin: 48px 0;
+}
+
+/* Container */
+.container {
+    display: flex;
+    width: 870px;
+    margin: 60px auto 0;
+    padding: 6px;
+    border-radius: 10px;
+    background: #fff;
+}
+
+/* Heading */
+.heading {
+    text-align: center;
+}
+
+.heading h1 {
+    color: #050545;
+    font-weight: 900;
+    font-size: 3.2rem;
+}
+
+.heading p {
+    margin-top: 16px;
+    color: #8d8d9f;
+}
+
+/* Contact info */
+.contact-info {
+    position: relative;
+    flex-shrink: 0;
+    width: 330px;
+    padding: 24px 30px 30px;
+    border-radius: 10px;
+    color: #fff;
+    background: var(--primary-color);
+    overflow: hidden;
+}
+
+.contact-info h2 {
+    font-weight: 600;
+    font-size: 2.2rem;
+}
+
+.contact-info .desc {
+    margin-top: 10px;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: #9e8dd3;
+}
+
+.contact-info .info-item {
+    margin-top: 36px;
+}
+
+.contact-info .info-item .icon {
+    display: inline-block;
+    width: 18px;
+    text-align: center;
+    color: var(--secondary-color);
+}
+
+.contact-info .info-item .value {
+    margin-left: 8px;
+    font-size: 1.3rem;
+    color: #e0cff3;
+}
+
+.socials {
+    display: flex;
+    column-gap: 10px;
+    margin-top: 110px;
+}
+
+.socials .item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.socials .item:hover {
+    background: var(--secondary-color);
+}
+
+.circle {
+    position: absolute;
+    right: 55px;
+    bottom: 60px;
+    z-index: 1;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #7955f3;
+    opacity: 0.95;
+}
+
+.circle.large {
+    right: -110px;
+    bottom: -110px;
+    z-index: 0;
+    width: 250px;
+    height: 250px;
+    opacity: 1;
+    background: var(--secondary-color);
+}
+
+/* ===== Contact Form ===== */
+
+.contact-form {
+    padding: 28px 32px;
+    flex-grow: 1;
+}
+
+.contact-form:has(:invalid) .submit-btn {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.contact-row {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.form-group {
+    flex-grow: 1;
+}
+
+.form-label,
+.form-input {
+    display: block;
+    transition: 0.5s;
+}
+
+.form-label {
+    color: #0e0e46;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.form-input,
+.form-area {
+    padding: 12px 0;
+    width: 100%;
+    color: #0e0e46;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #d8d8d8;
+}
+
+.form-input::placeholder,
+.form-area::placeholder {
+    color: #d8d8d8;
+}
+
+.form-group:focus-within .form-label:not(.large) {
+    color: #511ddf;
+}
+
+.form-group:focus-within .form-input {
+    border-bottom: 1px solid #511ddf;
+}
+
+.form-error {
+    margin-top: 4px;
+    font-size: 1.3rem;
+    color: red;
+    /* display: none; */
+    visibility: hidden;
+}
+
+/* ===== Radio ===== */
+
+.form-label.large {
+    font-size: 1.4rem;
+}
+
+.radio-group {
+    margin: 12px 0;
+    display: flex;
+}
+
+.radio-btn + .radio-btn {
+    margin-left: 24px;
+}
+
+.radio-btn label {
+    position: relative;
+    white-space: nowrap;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #3a3b72;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.radio-btn label::before,
+.radio-btn label::after {
+    content: "";
+    display: inline-block;
+}
+
+.radio-btn label::before {
+    margin-right: 8px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 1px solid #9fa1bb;
+    transition: 0.25s;
+}
+
+.radio-btn [type="radio"]:checked ~ label::before {
+    background-color: #6133e2;
+    border-color: #6133e2;
+}
+
+.radio-btn [type="radio"] {
+    display: none;
+}
+
+.radio-btn [type="radio"]:checked ~ label::after {
+    position: absolute;
+    top: 6px;
+    left: 4px;
+    width: 6px;
+    height: 3px;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    rotate: -45deg;
+}
+
+.form-area {
+    resize: none;
+    max-height: 200px;
+}
+
+.submit-btn {
+    margin-left: auto;
+    min-width: 160px;
+    height: 50px;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 1.4rem;
+    background-color: #3e2093;
+    outline: none;
+    border: none;
+    transition: 0.25s;
+}
+
+.submit-btn:hover {
+    opacity: 0.85;
+    background-color: rgb(217, 205, 255);
+    color: #3e2093;
+}
+
+.contact-row:last-child {
+    margin: 0;
+}
+
+/* === Validation === */
+
+.form-group:has(:invalid:not(:placeholder-shown)) .form-error {
+    visibility: visible;
+}
+
+.form-group:has(:invalid:not(:placeholder-shown)) .form-input {
+    border-bottom: 1px solid red;
+}
+
+.form-group:has(:invalid:not(:placeholder-shown)) .form-label:not(.large) {
+    color: red;
 }
